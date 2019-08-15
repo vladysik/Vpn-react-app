@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
+
 import WelcomeSlider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+import {BrowserRouter, Route, Link} from "react-router-dom";
+import createBrowserHistory from "history/createBrowserHistory";
+
 import WelcomeImage from '../images/welcome.png';
+
+const history = createBrowserHistory();
 
 export default class MainComponent extends Component {
 
@@ -50,7 +57,7 @@ export default class MainComponent extends Component {
           </WelcomeSlider>
         </div>
         <div className="MainComponent__button">
-          <button>GET STARTED</button>
+          <Link to="/vpn">GET STARTED</Link>
         </div>
       </div>
     );

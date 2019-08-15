@@ -41,7 +41,17 @@
   width: 100%;
 }
 
-.MainComponent__button button {
+.MainComponent__button a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.MainComponent__button a:hover {
+  color: #0d4271;
+  background: none;
+}
+
+.MainComponent__button a {
   padding: 15px 50px;
   background: #0d4271;
   border: 2px solid #0d4271;
@@ -53,7 +63,55 @@
   transition: 0.3s;
 }
 
-.MainComponent__button button:hover {
+.VPNComponent {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.VPNComponent__title {
+  margin-bottom: 20px;
+  color: #0d4271;
+}
+
+.VPNComponent__label {
+  display: flex;
+  align-items: center;
+  border: 1px solid #979ba4;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 30px;
+  color: #979ba4;
+}
+
+.VPNComponent__label .circle {
+  width: 10px;
+  height: 10px;
+  background: #9ba1ad;
+  border-radius: 15px;
+  margin-left: 10px;
+}
+
+.VPNComponent__image {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.VPNComponent__button button {
+  padding: 15px 50px;
+  background: #0d4271;
+  border: 2px solid #0d4271;
+  color: white;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.VPNComponent__button button:hover {
   background: none;
   color: #0d4271;
 }
