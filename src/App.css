@@ -76,7 +76,7 @@
   color: #0d4271;
 }
 
-.VPNComponent__label {
+.VPNComponent__label_disconnected {
   display: flex;
   align-items: center;
   border: 1px solid #979ba4;
@@ -86,10 +86,28 @@
   color: #979ba4;
 }
 
-.VPNComponent__label .circle {
+.VPNComponent__label_disconnected .circle {
   width: 10px;
   height: 10px;
   background: #9ba1ad;
+  border-radius: 15px;
+  margin-left: 10px;
+}
+
+.VPNComponent__label_connected {
+  display: flex;
+  align-items: center;
+  border: 1px solid #4CAF50;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 30px;
+  color: #4CAF50;;
+}
+
+.VPNComponent__label_connected .circle {
+  background: #4CAF50;
+  width: 10px;
+  height: 10px;
   border-radius: 15px;
   margin-left: 10px;
 }
@@ -109,6 +127,7 @@
   font-size: 14px;
   cursor: pointer;
   transition: 0.3s;
+  outline: none;
 }
 
 .VPNComponent__button button:hover {

@@ -5,11 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import {BrowserRouter, Route, Link} from "react-router-dom";
-import createBrowserHistory from "history/createBrowserHistory";
 
 import WelcomeImage from '../images/welcome.png';
-
-const history = createBrowserHistory();
 
 export default class MainComponent extends Component {
 
