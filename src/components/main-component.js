@@ -4,7 +4,7 @@ import WelcomeSlider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import {BrowserRouter, Route, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 import WelcomeImage from '../images/welcome.png';
 
@@ -39,9 +39,8 @@ export default class MainComponent extends Component {
             <div>
               <h1>Easy-to-use apps for every device</h1>
               <p>
-                ExpressVPN has apps for all your favorite devices and platforms, 
-                like Windows, Mac, iPhone, iPad, Android, routers, and Linux,<br/> 
-                plus manual configurations for various other routers and devices. 
+                ExpressVPN has apps for all your favorite devices and platforms,<br/> 
+                like Windows, Mac, iPhone, iPad, Android, routers, and Linux. 
               </p>
             </div>
             <div>

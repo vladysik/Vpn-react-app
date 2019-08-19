@@ -11,6 +11,10 @@
   width: 100%;
 }
 
+.MainComponent__image img {
+  width: 30%;
+}
+
 .MainComponent__slider {
   width: 100%;
   overflow: hidden;
@@ -133,4 +137,57 @@
 .VPNComponent__button button:hover {
   background: none;
   color: #0d4271;
+}
+
+.VPNComponent__select {
+  position: relative;
+  margin-top: 15px;
+}
+
+.VPNComponent__select .title {
+  border: 1px solid #0d4271;
+  color: #0d4271;
+  border-radius: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.VPNComponent__select .title img {
+  margin-left: 10px;
+}
+
+.VPNComponent__select-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background: white;
+}
+
+.VPNComponent__select-content ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.VPNComponent__select-content ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.VPNComponent__select-content ul li:hover img {
+  margin-left: 10px;
+  transition: 0.3s;
+}
+
+.VPNComponent__select-content ul li p {
+  color: #0d4271;
+}
+
+.VPNComponent__select-content.active {
+  display: block;
 }
