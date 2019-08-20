@@ -19,14 +19,32 @@ export default class VPNComponent extends Component {
     isVpnConnected: false,
   }
 
-  chooseServer() {
-    console.log('select');
+  chooseServerClick() {
+    console.log("server");
   }
 
   render() {
 
     const isServerSelectActive = this.state.isServerSelect;
     const isVpnOn = this.state.isVpnConnected;
+
+    const serversArray = [
+      [AutomaticImg, "Automatic"], 
+      [NewYorkImg, "New York"],
+      [LondonImg, "London"],
+      [MoscowImg, "Moscow"],
+      [SwedenImg, "Sweden"],
+      [MelbourneImg, "Melbourne"],
+      [NewDelhiImg, "New Delhi"]
+    ];
+
+    const serversItems = serversArray.map((server) => 
+      <li onClick={this.chooseServerClick}>
+        <img src={server[0]} alt="server"/>
+        <p>{server[1]}</p>
+        <img src={UncheckedImg} alt="checkbox"/>
+      </li>
+    );
 
     return (
       <div className="VPNComponent">
@@ -44,41 +62,7 @@ export default class VPNComponent extends Component {
           </div>
           <div className={ isServerSelectActive ? "VPNComponent__select-content active" : "VPNComponent__select-content" }>
             <ul>
-              <li onClick={this.chooseServer}>
-                <img src={AutomaticImg} alt="server"/>
-                <p>Automatic</p>
-                <img src={UncheckedImg} alt="checkbox"/>
-              </li>
-              <li onClick={this.chooseServer}>
-                <img src={NewYorkImg} alt="server"/>
-                <p>New York</p>
-                <img src={UncheckedImg} alt="checkbox"/>
-              </li>
-              <li onClick={this.chooseServer}>
-                <img src={LondonImg} alt="server"/>
-                <p>London</p>
-                <img src={UncheckedImg} alt="checkbox"/>
-              </li>
-              <li onClick={this.chooseServer}>
-                <img src={MoscowImg} alt="server"/>
-                <p>Moscow</p>
-                <img src={UncheckedImg} alt="checkbox"/>
-              </li>
-              <li onClick={this.chooseServer}>
-                <img src={SwedenImg} alt="server"/>
-                <p>Sweden</p>
-                <img src={UncheckedImg} alt="checkbox"/>
-              </li>
-              <li onClick={this.chooseServer}>
-                <img src={MelbourneImg} alt="server"/>
-                <p>Melbourne</p>
-                <img src={UncheckedImg} alt="checkbox"/>
-              </li>
-              <li onClick={this.chooseServer}>
-                <img src={NewDelhiImg} alt="server"/>
-                <p>New Delhi</p>
-                <img src={UncheckedImg} alt="checkbox"/>
-              </li>
+              {serversItems}
             </ul>
           </div>
         </div>
