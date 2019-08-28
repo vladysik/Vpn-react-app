@@ -14,9 +14,32 @@ import NewDelhiImg from '../images/india.png';
 
 export default class VPNComponent extends Component {
 
-  state = {
-    isServerSelect: false,
-    isVpnConnected: false,
+  constructor() {
+
+    super();
+
+    this.state = {
+      isServerSelect: false,
+      isVpnConnected: false,
+    }
+
+    this.showServers = this.showServers.bind(this)
+    this.toggleVpn = this.toggleVpn.bind(this)
+
+  }
+
+  showServers(event){
+    event.preventDefault()
+    this.setState({
+      isServerSelect : !this.state.isServerSelect
+    })
+  }
+
+  toggleVpn(event) {
+    event.preventDefault()
+    this.setState({
+      isVpnConnected : !this.state.isVpnConnected
+    })
   }
 
   chooseServerClick() {
@@ -25,8 +48,9 @@ export default class VPNComponent extends Component {
 
   render() {
 
-    const isServerSelectActive = this.state.isServerSelect;
-    const isVpnOn = this.state.isVpnConnected;
+    const {isServerSelect} = this.state;
+
+    const {isVpnConnected} = this.state;
 
     const serversArray = [
       [AutomaticImg, "Automatic"], 
@@ -51,26 +75,26 @@ export default class VPNComponent extends Component {
         <div className="VPNComponent__title">
           <h1>VPN master</h1>
         </div>
-        <div className={ isVpnOn ? "VPNComponent__label_connected" : "VPNComponent__label_disconnected" }>
-          <p>{ isVpnOn ? "Connected" : "Disconnected" }</p>
+        <div className={ isVpnConnected ? "VPNComponent__label_connected" : "VPNComponent__label_disconnected" }>
+          <p>{ isVpnConnected ? "Connected" : "Disconnected" }</p>
           <div className="circle"></div>
         </div>
         <div className="VPNComponent__select">
-          <div className="title" onClick={ () => this.setState({isServerSelect: !isServerSelectActive}) }>
+          <div className="title" onClick={ this.showServers }>
             <p>Pick your server: Automatic</p>
             <img src={DropdownImg} alt="pick your server"/>
           </div>
-          <div className={ isServerSelectActive ? "VPNComponent__select-content active" : "VPNComponent__select-content" }>
+          <div className={ isServerSelect ? "VPNComponent__select-content active" : "VPNComponent__select-content" }>
             <ul>
               {serversItems}
             </ul>
           </div>
         </div>
         <div className="VPNComponent__image">
-          <img src= { isVpnOn ? OnlineImage : OfflineImage }  className="vpn-status-image" alt="vpn status" />
+          <img src= { isVpnConnected ? OnlineImage : OfflineImage }  className="vpn-status-image" alt="vpn status" />
         </div>
         <div className="VPNComponent__button">
-          <button onClick={ () => this.setState({isVpnConnected: !isVpnOn}) }>{ isVpnOn ? "DISCONNECT" : "CONNECT" }</button>
+          <button onClick={ this.toggleVpn }>{ isVpnConnected ? "DISCONNECT" : "CONNECT" }</button>
         </div>
       </div>
     );
