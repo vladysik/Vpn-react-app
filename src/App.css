@@ -1,33 +1,193 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.MainComponent {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.MainComponent__image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.MainComponent__image img {
+  width: 30%;
+}
+
+.MainComponent__slider {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.MainComponent__slider h1 {
+  color: #0d4271;
+}
+
+.MainComponent__slider p {
+  color: gray;
+}
+
+.MainComponent__slider .slick-dots {
+  bottom: -20px;
+}
+
+.MainComponent__slider .slick-dots li button:before {
+  font-size: 15px;
+}
+
+.MainComponent__button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.MainComponent__button a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.MainComponent__button a:hover {
+  color: #0d4271;
+  background: none;
+}
+
+.MainComponent__button a {
+  padding: 15px 50px;
+  background: #0d4271;
+  border: 2px solid #0d4271;
   color: white;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.VPNComponent {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.VPNComponent__title {
+  margin-bottom: 20px;
+  color: #0d4271;
+}
+
+.VPNComponent__label_disconnected {
+  display: flex;
+  align-items: center;
+  border: 1px solid #979ba4;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 30px;
+  color: #979ba4;
+}
+
+.VPNComponent__label_disconnected .circle {
+  width: 10px;
+  height: 10px;
+  background: #9ba1ad;
+  border-radius: 15px;
+  margin-left: 10px;
+}
+
+.VPNComponent__label_connected {
+  display: flex;
+  align-items: center;
+  border: 1px solid #4CAF50;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 30px;
+  color: #4CAF50;;
+}
+
+.VPNComponent__label_connected .circle {
+  background: #4CAF50;
+  width: 10px;
+  height: 10px;
+  border-radius: 15px;
+  margin-left: 10px;
+}
+
+.VPNComponent__image {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.VPNComponent__button button {
+  padding: 15px 50px;
+  background: #0d4271;
+  border: 2px solid #0d4271;
+  color: white;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  outline: none;
+}
+
+.VPNComponent__button button:hover {
+  background: none;
+  color: #0d4271;
+}
+
+.VPNComponent__select {
+  position: relative;
+  margin-top: 15px;
+}
+
+.VPNComponent__select .title {
+  border: 1px solid #0d4271;
+  color: #0d4271;
+  border-radius: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.VPNComponent__select .title img {
+  margin-left: 10px;
+}
+
+.VPNComponent__select-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background: white;
+}
+
+.VPNComponent__select-content ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.VPNComponent__select-content ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.VPNComponent__select-content ul li:hover img {
+  margin-left: 10px;
+  transition: 0.3s;
+}
+
+.VPNComponent__select-content ul li p {
+  color: #0d4271;
+}
+
+.VPNComponent__select-content.active {
+  display: block;
 }
