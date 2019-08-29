@@ -57,9 +57,10 @@ export default class VPNComponent extends Component {
 
   render() {
 
-    const {isServerSelect} = this.state;
-
-    const {isVpnConnected} = this.state;
+    const {
+      isServerSelect,
+      isVpnConnected
+    } = this.state;
 
     const serversItems = this.state.serversArray.map((server) => 
       <li onClick={this.chooseServerClick}>
