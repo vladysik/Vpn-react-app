@@ -21,6 +21,30 @@ export default class VPNComponent extends Component {
     this.state = {
       isServerSelect: false,
       isVpnConnected: false,
+      // serversArray: {
+      //   serverImage: [AutomaticImg, NewYorkImg, LondonImg, MoscowImg, SwedenImg, MelbourneImg, NewDelhiImg],
+      //   serverCity: ["Automatic", "New York", "London", "Moscow", "Sweden", "Melbourne", "New Delhi"]
+      // }
+      
+      // serversArray: [
+      //   [AutomaticImg, "Automatic"], 
+      //   [NewYorkImg, "New York"],
+      //   [LondonImg, "London"],
+      //   [MoscowImg, "Moscow"],
+      //   [SwedenImg, "Sweden"],
+      //   [MelbourneImg, "Melbourne"],
+      //   [NewDelhiImg, "New Delhi"]
+      // ]
+
+      serversArray: [
+        { serverIco: AutomaticImg, serverCity: "Automatic" },
+        { serverIco: NewYorkImg, serverCity: "New York" },
+        { serverIco: LondonImg, serverCity: "London" },
+        { serverIco: MoscowImg, serverCity: "Moscow" },
+        { serverIco: SwedenImg, serverCity: "Sweden" },
+        { serverIco: MelbourneImg, serverCity: "Melbourne" },
+        { serverIco: NewDelhiImg, serverCity: "New Delhi" },
+      ]
     }
 
     this.showServers = this.showServers.bind(this)
@@ -52,20 +76,10 @@ export default class VPNComponent extends Component {
 
     const {isVpnConnected} = this.state;
 
-    const serversArray = [
-      [AutomaticImg, "Automatic"], 
-      [NewYorkImg, "New York"],
-      [LondonImg, "London"],
-      [MoscowImg, "Moscow"],
-      [SwedenImg, "Sweden"],
-      [MelbourneImg, "Melbourne"],
-      [NewDelhiImg, "New Delhi"]
-    ];
-
-    const serversItems = serversArray.map((server) => 
+    const serversItems = this.state.serversArray.map((server) => 
       <li onClick={this.chooseServerClick}>
-        <img src={server[0]} alt="server"/>
-        <p>{server[1]}</p>
+        <img src={server.serverIco} alt={server.serverCity}/>
+        <p>{server.serverCity}</p>
         <img src={UncheckedImg} alt="checkbox"/>
       </li>
     );
