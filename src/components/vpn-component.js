@@ -21,21 +21,6 @@ export default class VPNComponent extends Component {
     this.state = {
       isServerSelect: false,
       isVpnConnected: false,
-      // serversArray: {
-      //   serverImage: [AutomaticImg, NewYorkImg, LondonImg, MoscowImg, SwedenImg, MelbourneImg, NewDelhiImg],
-      //   serverCity: ["Automatic", "New York", "London", "Moscow", "Sweden", "Melbourne", "New Delhi"]
-      // }
-      
-      // serversArray: [
-      //   [AutomaticImg, "Automatic"], 
-      //   [NewYorkImg, "New York"],
-      //   [LondonImg, "London"],
-      //   [MoscowImg, "Moscow"],
-      //   [SwedenImg, "Sweden"],
-      //   [MelbourneImg, "Melbourne"],
-      //   [NewDelhiImg, "New Delhi"]
-      // ]
-
       serversArray: [
         { serverIco: AutomaticImg, serverCity: "Automatic" },
         { serverIco: NewYorkImg, serverCity: "New York" },
