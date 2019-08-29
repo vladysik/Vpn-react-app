@@ -14,42 +14,27 @@ import NewDelhiImg from '../images/india.png';
 
 export default class VPNComponent extends Component {
 
-  constructor() {
-
-    super();
-
-    this.state = {
-      isServerSelect: false,
-      isVpnConnected: false,
-      serversArray: [
-        { serverIco: AutomaticImg, serverCity: "Automatic" },
-        { serverIco: NewYorkImg, serverCity: "New York" },
-        { serverIco: LondonImg, serverCity: "London" },
-        { serverIco: MoscowImg, serverCity: "Moscow" },
-        { serverIco: SwedenImg, serverCity: "Sweden" },
-        { serverIco: MelbourneImg, serverCity: "Melbourne" },
-        { serverIco: NewDelhiImg, serverCity: "New Delhi" },
-      ]
-    }
-
-    this.showServers = this.showServers.bind(this)
-    this.toggleVpn = this.toggleVpn.bind(this)
-
+  state = {
+    isServerSelect: false,
+    isVpnConnected: false,
+    serversArray: [
+      { serverIco: AutomaticImg, serverCity: "Automatic" },
+      { serverIco: NewYorkImg, serverCity: "New York" },
+      { serverIco: LondonImg, serverCity: "London" },
+      { serverIco: MoscowImg, serverCity: "Moscow" },
+      { serverIco: SwedenImg, serverCity: "Sweden" },
+      { serverIco: MelbourneImg, serverCity: "Melbourne" },
+      { serverIco: NewDelhiImg, serverCity: "New Delhi" },
+    ]
   }
 
-  showServers(event){
-    event.preventDefault()
-    this.setState({
-      isServerSelect : !this.state.isServerSelect
-    })
-  }
+  showServers = (e) => this.setState({
+    isServerSelect : !this.state.isServerSelect
+  })
 
-  toggleVpn(event) {
-    event.preventDefault()
-    this.setState({
-      isVpnConnected : !this.state.isVpnConnected
-    })
-  }
+  toggleVpn = (e) => this.setState({
+    isVpnConnected : !this.state.isVpnConnected
+  })
 
   chooseServerClick() {
     console.log("server");
